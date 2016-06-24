@@ -65,7 +65,7 @@ foreach $my_fic (@listeFic)
     {
       $inAbstractMethodBlock = 0;
     }
-    if (($listeProperties == 1) && (/^\s*([\w\d]*)\s*(=\s*[\w\d{}'',\s\[\]\.]*)?.*(%>.*)?/))
+    if (($listeProperties == 1) && (/^\s*([\w\d]*)\s*(=\s*[\w\d{}'',-\s\[\]\.]*)?.*(%>.*)?/))
     {
       $propertyName = $1;
       $propertyValue = $2;
