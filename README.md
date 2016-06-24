@@ -35,6 +35,18 @@ In certain circumstances, the association between .pl files and the perl executa
 
 Run the provided script convertToUnix.sh to strip the carriage return and the .exe extension from the script
 
+## Usage
+
+### Source browser
+
+To enable the source browser edit the Doxyfile as follow:
+
+    FILTER_SOURCE_FILES    = YES
+    SOURCE_BROWSER         = YES
+    FILTER_SOURCE_PATTERNS = *m=./scripts/m2srcm.pl
+
+The script m2srcm.pl probably needs more testing, so may not work in general.
+
 ## License
 
 Copyright (c) 2009, Fabrice
