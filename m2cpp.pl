@@ -8,6 +8,14 @@ else
   $fname=$ARGV[0];
 }
 
+# Extract namespace 
+my $namespace = ''; 
+foreach(split /\//, $fname) { 
+if($_ =~ /^\+/) { 
+$namespace = $namespace.substr($_, 1).'.'; 
+} 
+}
+
 # If we have a .m file inside a (@)-folder with the same name :
 # we will read each file of this folder
 if ($fname =~ /^(.*)\@([\d\w-_]*)[\/\\](\2)\.m/)
@@ -173,11 +181,11 @@ foreach $my_fic (@listeFic)
       if (!($classInheritance =~ /^$/))
       {
         $classInheritance =~ s/&/,public /g;
-        $classDef = "class ".$className.":public $classInheritance";
+        $classDef = "class ".$namespace.$className.":public $classInheritance";
       }
       else
       {
-        $classDef = "class ".$className;
+        $classDef = "class ".$namespace.$className;
       }
       $output=$output.$classDef;
       $output=$output."{";
