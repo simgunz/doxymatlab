@@ -17,7 +17,8 @@ This package provides :
 - get the Doxyfile file from the C:\DoxygenMatlbab directory and replace the default Doxyfile provided by Doxygen
 - edit the Doxyfile file (or use the DoxyWizard tool provided by Doxygen) to modify a few settings:
     * EXTENSION_MAPPING=.m=C++
-    * FILTER_PATTERN=*m=C:\DoxygenMatlbab\m2cpp.pl
+    * FILTER_PATTERN=*m=C:\DoxygenMatlbab\m2cpp.pl  (m2cpp.bat on Windows platform)
+	* FILTER_SOURCE_PATTERNS=C:\DoxygenMatlbab\m2srcm.pl (m2srcm.bat on Windows platform)
     * PERL_PATH=<path to your perl version>
     * INPUT=<directory where your documented code is located>
     * OUTPUT_DIRECTORY=<directory where you want to generate your documentation>
@@ -25,11 +26,14 @@ This package provides :
 
 ### Note for Windows users
 
-In certain circumstances, the association between .pl files and the perl executable is not well configured, leading to "Argument must contain filename -1 at C:\DoxygenMatlab\m2cpp.pl line 4" when running doxygen. To work around this issue, you should execute the following lines in a Windows command prompt ("cmd") :
+In certain circumstances, the association between .pl files and the perl executable is not well configured, leading to "Argument must contain filename -1 at C:\DoxygenMatlab\m2cpp.pl line 4" when running doxygen. To work around this issue, you can try to execute the following lines in a Windows command prompt ("cmd") :
 
    assoc .pl=PerlScript
    ftype PerlScript=C:\Program Files\MATLAB\R2010b\sys\perl\win32\bin\perl.exe %1 %*
 (don't forget to replace the path to the perl.exe file with yours in the line above)
+
+If this doesn't work - just use bat files instead of pl scirpts for both FILTER_PATTERN and FILTER_SOURCE_PATTERNS settings.
+
 
 ### Note for Linux/Mac users
 
