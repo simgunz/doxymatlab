@@ -21,7 +21,8 @@ classdef  (InferiorClasses = {?class1,?class2}) classDocumentationExample
   end
   properties (Constant = true)
     %> Description of a constant property
-    constantProperty = {'1', '2', 'trois'};
+    constantProperty = {'1', '2', ...
+        'trois'};
   end
   properties
     %> Description of the first property of the class
@@ -177,5 +178,6 @@ classdef  (InferiorClasses = {?class1,?class2}) classDocumentationExample
     %> @param param2 Description of the second parameter
     %> @retval out return value of this method
     % ======================================================================
-    out = exampleAbstractMethod(param1, param2);
+    out = exampleAbstractMethod(param1, ...
+        param2);
 end
