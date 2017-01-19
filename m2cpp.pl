@@ -8,12 +8,12 @@ else
   $fname=$ARGV[0];
 }
 
-# Extract namespace 
-my $namespace = ''; 
-foreach(split /\//, $fname) { 
-if($_ =~ /^\+/) { 
-$namespace = $namespace.substr($_, 1).'.'; 
-} 
+# Extract namespace
+my $namespace = '';
+foreach(split /\//, $fname) {
+if($_ =~ /^\+/) {
+$namespace = $namespace.substr($_, 1).'.';
+}
 }
 
 # If we have a .m file inside a (@)-folder with the same name :
@@ -154,7 +154,7 @@ foreach $my_fic (@listeFic)
       {
         $arguments = "";
       }
-      $ligne = "$methodAttribute $functionKeyWord $functionName($arguments);"; 
+      $ligne = "$methodAttribute $functionKeyWord $functionName($arguments);";
       $output=$output.$ligne;
     }
     # Signature of functions in abstract methods
@@ -169,11 +169,11 @@ foreach $my_fic (@listeFic)
       {
         $arguments = "";
       }
-      $ligne = "$methodAttribute $functionKeyWord $functionName($arguments);"; 
+      $ligne = "$methodAttribute $functionKeyWord $functionName($arguments);";
       $output=$output.$ligne;
     }
     # inheritance for classes
-    if (/(^\s*classdef)\s*(\s*\([\{\}\?\w,=\s]+\s*\))?\s*([\w\d_]+)\s*<?\s*([\s\w\d._&]+)?(.*)/) 
+    if (/(^\s*classdef)\s*(\s*\([\{\}\?\w,=\s]+\s*\))?\s*([\w\d_]+)\s*<?\s*([\s\w\d._&]+)?(.*)/)
     {
       $className = $3;
       $classInheritance = $4;
