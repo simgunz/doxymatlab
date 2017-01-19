@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['one',['one',['../classclass_documentation_example.html#ab9ddf7f9edee9f0a66e4e1d7bf8d824aac1df69943b62b4a97a89025994993b0c',1,'classDocumentationExample']]]
+  ['pivateproperty',['pivateProperty',['../classclass_documentation_example.html#a729ef0bddf414de3426d960cb77323d0',1,'classDocumentationExample']]],
+  ['protectedproperty',['protectedProperty',['../classclass_documentation_example.html#ae1318c009ee9d5de202dc9007575eae0',1,'classDocumentationExample']]],
+  ['publicproperty',['publicProperty',['../classclass_documentation_example.html#aa65636dd1dcc74a293a897d949e4bc8c',1,'classDocumentationExample']]]
 ];

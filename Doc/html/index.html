@@ -78,7 +78,7 @@ Extract code comments from Matlab files (.m files)</h1>
 <li>lines beginning with the <code>events</code> keyword : these lines are converted into C++ enum Events <dl class="section note"><dt>Note</dt><dd>for enumeration definition : this script only supports the following declaration : <div class="fragment"><div class="line">enumeration</div><div class="line">  first_enum</div><div class="line">  second_enum</div><div class="line">end</div></div><!-- fragment --> This one is not yet supported : <div class="fragment"><div class="line">enumeration</div><div class="line">  first_enum, second_enum</div><div class="line">end</div></div><!-- fragment --> The file <a class="el" href="class_documentation_example_8m.html" title="File used to show an example of class description. ">classDocumentationExample.m</a> provides an example of enumeration definition with comments extracted by Doxygen.</dd></dl>
 </li>
 </ul>
-<p>See <a class="el" href="installation.html">Installation details</a> if you want more details about how to make this script work.</p>
+<p>See README.md if you want more details about how to make this script work.</p>
 <dl class="section attention"><dt>Attention</dt><dd>Each line belonging to the doxygen documentation must begin with <b>%&gt;</b> .</dd></dl>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
 <div class="fragment"><div class="line">% Matlab comment ignored by doxygen</div><div class="line">%&gt; comment analyzed by doxygen</div></div><!-- fragment --> <dl class="section attention"><dt>Attention</dt><dd>Doxygen keyword have to begin by <b>@</b>, for example @b to bold the text (the use of \ instead of @ is not supported)</dd></dl>
@@ -113,7 +113,7 @@ Class description</h1>
 * </pre> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 19 2017 13:52:10 for UsingDoxygenwithMatlab by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 19 2017 14:07:22 for UsingDoxygenwithMatlab by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>
