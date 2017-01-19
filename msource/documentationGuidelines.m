@@ -48,7 +48,7 @@
 %>
 %> .
 %>
-%> See @ref installation if you want more details about how to make this script work.
+%> See README.md if you want more details about how to make this script work.
 %>
 %> @attention Each line belonging to the doxygen documentation must begin with <b>%></b> .
 %>
@@ -97,38 +97,6 @@
 %>%>
 %>% ======================================================================
 %>@endverbatim
-%>
-%>
-%> @page installation Installation details
-%>
-%> This package contains two files :
-%> - a perl script (@c m2cpp.pl) which is a filter that converts  .m files into .cpp files that Doxygen can understand
-%> - the @c Doxyfile file (configuration file used by Doxygen) that contains parameters needed by Doxygen to extract the documentation from .m files.
-%>
-%> Installation :
-%> - You need to have the @b Doxygen software installed (version 1.5.9 or newer required (tested with version 1.7.1))
-%> - You need to have @b perl installed (perl is shipped with Matlab, located usually  in @c $matlabroot\\sys\\perl\\win32\\bin)
-%> - extract the @c Doxyfile file from the @c doxygen.zip package and replace the default Doxyfile provided by Doxygen
-%> - extract the @c m2cpp.pl into a directory (for example @c C:\\DoxygenMatlab)
-%> - edit the Doxyfile file (or use the DoxyWizard tool provided by Doxygen) to modify a few settings :
-%>   - EXTENSION_MAPPING=.m=C++
-%>   - FILTER_PATTERN=*m=C:\\DoxygenMatlab\\m2cpp.pl
-%>   - PERL_PATH=\<path to your perl version\>
-%>   - INPUT=\<directory where your documented code is located\>
-%>   - OUTPUT_DIRECTORY=\<directory where you want to generate your documentation\>
-%>   - STRIP_FORM_PATH=\<directory where your documented code is located\>
-%>
-%>   @note For Windows users, in certain circumstances, the association
-%>   between .pl files and the perl executable is not well configured,
-%>   leading to "Argument must contain filename -1 at C:\DoxygenMatlab\m2cpp.pl line 4"
-%>   when running doxygen. To work around this issue, you should execute the following lines
-%>   in a Windows command prompt ("cmd") :
-%>   @code
-%>   assoc .pl=PerlScript
-%>   ftype PerlScript=C:\Program Files\MATLAB\R2010b\sys\perl\win32\bin\perl.exe %1 %*
-%>   @endcode
-%>   (don't forget to replace the path to the perl.exe file with yours in the line above)
-%>
 %>
 %>
 
