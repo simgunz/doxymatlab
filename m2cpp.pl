@@ -48,8 +48,6 @@ $output = "";
 foreach $my_fic (@listeFic)
 {
 
-  open(my $in, $my_fic);
-
   $declTypeDef="";
   $inClass = 0;
   $inAbstractMethodBlock = 0;
@@ -58,6 +56,19 @@ foreach $my_fic (@listeFic)
 
   $methodAttribute = "";
 
+  my $content;
+  open(my $fh, '<', $my_fic) or die "cannot open file $my_fic";
+  {
+      local $/;
+      $content = <$fh>;
+  }
+  close($fh);
+
+  # Join the MATLAB lines splitted by ...
+  $content =~ s/\.\.\.\s*//g;
+
+  # Open the string as a file
+  open(my $in, '<', \$content) or die $!;
 
   while (<$in>)
   {
