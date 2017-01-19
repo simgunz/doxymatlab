@@ -11,7 +11,7 @@ This package provides :
 
 ## Installation
 
-- You need to have the Doxygen software installed (version 1.5.9 or newer required (tested with version 1.7.1))
+- You need to have the Doxygen software installed (version 1.5.9 or newer required (tested with version 1.8.12))
 - You need to have perl installed (perl is shipped with Matlab, located usually in $matlabroot\sys\perl\win32\bin)
 - unzip the DoxygenMatlab.zip to C:\DoxygenMatlbab (for example)
 - get the Doxyfile file from the C:\DoxygenMatlbab directory and replace the default Doxyfile provided by Doxygen
@@ -26,18 +26,11 @@ This package provides :
 
 ### Note for Windows users
 
-In certain circumstances, the association between .pl files and the perl executable is not well configured, leading to "Argument must contain filename -1 at C:\DoxygenMatlab\m2cpp.pl line 4" when running doxygen. To work around this issue, you can try to execute the following lines in a Windows command prompt ("cmd") :
-
-   assoc .pl=PerlScript
-   ftype PerlScript=C:\Program Files\MATLAB\R2010b\sys\perl\win32\bin\perl.exe %1 %*
-(don't forget to replace the path to the perl.exe file with yours in the line above)
-
-If this doesn't work - just use bat files instead of pl scirpts for both FILTER_PATTERN and FILTER_SOURCE_PATTERNS settings.
-
+Use the bat files instead of .pl scripts for both FILTER_PATTERN and FILTER_SOURCE_PATTERNS settings as explained above.
 
 ### Note for Linux/Mac users
 
-Run the provided script convertToUnix.sh to strip the carriage return and the .exe extension from the script
+Run the provided script convertToUnix.sh to strip the carriage return and the .exe extension from the script.
 
 ## Usage
 
@@ -47,7 +40,7 @@ To enable the source browser edit the Doxyfile as follow:
 
     FILTER_SOURCE_FILES    = YES
     SOURCE_BROWSER         = YES
-    FILTER_SOURCE_PATTERNS = *m=./scripts/m2srcm.pl
+    FILTER_SOURCE_PATTERNS = *m=C:\DoxygenMatlbab\m2srcm.pl (m2srcm.bat on Windows platform)
 
 The script m2srcm.pl probably needs more testing, so may not work in general.
 
