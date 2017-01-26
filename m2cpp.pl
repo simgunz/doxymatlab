@@ -44,7 +44,7 @@ else
 {
   @listeFic[0] = $fname;
 }
-$output = "";
+$output = "namespace $namespace {\n";
 foreach $my_fic (@listeFic)
 {
 
@@ -192,11 +192,11 @@ foreach $my_fic (@listeFic)
       if (!($classInheritance =~ /^$/))
       {
         $classInheritance =~ s/&/,public /g;
-        $classDef = "class ".$namespace.$className.":public $classInheritance";
+        $classDef = "class ".$className.":public $classInheritance";
       }
       else
       {
-        $classDef = "class ".$namespace.$className;
+        $classDef = "class ".$className;
       }
       $output=$output.$classDef;
       $output=$output."{";
@@ -272,5 +272,5 @@ foreach $my_fic (@listeFic)
   }
   close $in;
 }
-$output=$output."};\n";
+$output=$output."};\n};\n";
 print $output;
