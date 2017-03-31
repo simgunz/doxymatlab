@@ -44,7 +44,8 @@ else
 {
   @listeFic[0] = $fname;
 }
-$output = "namespace $namespace {\n";
+# Avoid creating anonymous_namespace{} for each main folder file
+$output = ($namespace eq "") ? "" : "namespace $namespace {\n";
 foreach $my_fic (@listeFic)
 {
 
@@ -272,5 +273,8 @@ foreach $my_fic (@listeFic)
   }
   close $in;
 }
-$output=$output."};\n};\n";
+$output=$output."};\n";
+if ($namespace ne "") {
+  $output=$output."};\n";
+}
 print $output;
